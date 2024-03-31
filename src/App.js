@@ -49,7 +49,7 @@ export default function Profile() {
   );
 }*/
 
-const products = [
+/*const products = [
   {title: 'Cabbage', isFruit: false, id: 1 },
   {title: 'Garlic', isFruit: false, id: 2 },
   {title: 'Apple', isFruit: true, id: 3 },
@@ -69,5 +69,25 @@ export default function ShoppingList() {
 
   return (
     <ul>{listItems}</ul>
+  );
+}*/
+
+function MyButton() {
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click me
+    </button>
+  );
+}
+
+export default function MyApp() {
+  return (
+    <div>
+      <MyButton />
+    </div>
   );
 }
