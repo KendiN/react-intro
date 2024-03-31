@@ -70,7 +70,7 @@ export default function ShoppingList() {
   return (
     <ul>{listItems}</ul>
   );
-}*/
+}
 
 function MyButton() {
   function handleClick() {
@@ -90,4 +90,30 @@ export default function MyApp() {
       <MyButton />
     </div>
   );
+}*/
+
+import { useState } from 'react';
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Counters that update separately</h1>
+      <MyButton />
+      <MyButton />
+    </div>
+  );
+}
+
+function MyButton() {
+  const[count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+return (
+  <button onClick={handleClick}>
+      Clicked {count} times
+  </button>
+ );
 }
