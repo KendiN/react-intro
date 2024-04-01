@@ -146,7 +146,7 @@ function MyButton({ count, onClick }) {
   );
 }*/
 
-//Managing State - reacting to input with state
+/*Managing State - reacting to input with state
 import { useState } from 'react';
 
 export default function Form() {
@@ -215,4 +215,47 @@ function submitForm(answer) {
       }
     },1500);
   });
+}*/
+
+//Choosing the state structure
+import { useState } from 'react';
+
+export default function Form() {
+  const [firstName, SetFirstName] = useState('');
+  const [lastName, SetLastName] = useState('');
+  const [fullName, SetFullName] = useState('');
+
+  function handleFirstNameChange(e) {
+    SetFirstName(e.target.value);
+    SetFullName(e.target.value + ' ' + lastName);
+  }
+
+  function handleLastNameChange(e) {
+    SetLastName(e.target.value);
+    SetFullName(firstName + ' ' +e.target.value);
+  }
+
+  return (
+    <>
+    <h2>Let's check you in</h2>
+    <label>
+      First name:{' '}
+      <input 
+        value={firstName}
+        onChange={handleFirstNameChange}
+      />
+    </label>
+
+    <label>
+      Last name:{' '}
+      <input 
+        value={lastName}
+        onChange={handleLastNameChange}
+      />
+    </label>
+    <p>
+        Your ticket will be issued to: <b>{fullName}</b>
+      </p>
+    </>
+  );
 }
