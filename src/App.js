@@ -319,7 +319,7 @@ export default function Messenger() {
         selectedContact={to}
         onSelect={contact => setTo(contact)}
       />
-      <Chat contact={to} />
+      <Chat key={to.email} contact={to} />
     </div>
   )
 }
